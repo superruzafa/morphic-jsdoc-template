@@ -217,10 +217,14 @@ function buildNav(members) {
                     kind: 'member',
                     memberof: v.longname
                 }),
-                methods: find({
-                    kind: 'function',
-                    memberof: v.longname
-                }),
+                methods: {
+                    own: find({
+                        kind: 'function',
+                        memberof: v.longname
+                    }),
+                    overrided: [],
+                    inherited: []
+                },
                 typedefs: find({
                     kind: 'typedef',
                     memberof: v.longname
@@ -246,7 +250,11 @@ function buildNav(members) {
             type: 'namespace',
             longname: 'global',
             members: members.globals.filter(function(v) { return v.kind === 'member'; }),
-            methods: members.globals.filter(function(v) { return v.kind === 'function'; }),
+            methods: {
+                own: members.globals.filter(function(v) { return v.kind === 'function'; }),
+                overrided: [],
+                inherited: []
+            },
             typedefs: members.globals.filter(function(v) { return v.kind === 'typedef'; }),
             interfaces: members.globals.filter(function(v) { return v.kind === 'interface'; }),
             events: members.globals.filter(function(v) { return v.kind === 'event'; }),
@@ -265,10 +273,27 @@ function buildNav(members) {
                     kind: 'member',
                     memberof: v.longname
                 }),
-                methods: find({
-                    kind: 'function',
-                    memberof: v.longname
-                }),
+                methods: {
+                    own: find({
+                        kind: 'function',
+                        memberof: v.longname,
+                        inherits: { isUndefined: true },
+                        inherited: { isUndefined: true },
+                        overrides: { isUndefined: true }
+                    }),
+                    overrided: find({
+                        kind: 'function',
+                        memberof: v.longname,
+                        inherited: true,
+                        overrides: { isUndefined: false }
+                    }),
+                    inherited: find({
+                        kind: 'function',
+                        memberof: v.longname,
+                        inherited: true,
+                        overrides: { isUndefined: true }
+                    }),
+                },
                 typedefs: find({
                     kind: 'typedef',
                     memberof: v.longname

@@ -66,14 +66,37 @@ var self = this;
             </ul>
             <ul class="methods itemMembers">
             <?js
-            if (item.methods.length) {
+            if (item.methods.own.length) {
             ?>
-            <span class="subtitle">Methods</span>
+            <span class="subtitle">Own methods</span>
             <?js
-
-                item.methods.forEach(function (v) {
+                item.methods.own.forEach(function (v) {
             ?>
-                <li class="<?js if (!v.inherited && !v.inherits) { ?>parent<?js } ?>  <?js if (v.deprecated) { ?>status-deprecated<?js } ?>" data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li>
+                <li class="<?js if (v.deprecated) { ?>status-deprecated<?js } ?>" data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li>
+            <?js
+                });
+            }
+            ?>
+            <?js
+            if (item.methods.overrided.length) {
+            ?>
+            <span class="subtitle">Overrided methods</span>
+            <?js
+                item.methods.overrided.forEach(function (v) {
+            ?>
+                <li class="<?js if (v.deprecated) { ?>status-deprecated<?js } ?>" data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li>
+            <?js
+                });
+            }
+            ?>
+            <?js
+            if (item.methods.inherited.length) {
+            ?>
+            <span class="subtitle">Inherited methods</span>
+            <?js
+                item.methods.inherited.forEach(function (v) {
+            ?>
+                <li class="<?js if (v.deprecated) { ?>status-deprecated<?js } ?>" data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li>
             <?js
                 });
             }

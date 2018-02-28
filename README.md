@@ -1,6 +1,8 @@
-# PixiJS template for JSDoc 3
+# JSDoc 3 template for Snap's Morphic API
 
-- [PixiJS](http://pixijs.com/)
+Based on [PixiJS template](https://github.com/pixijs/pixi-jsdoc-template)
+
+- [Snap!](https://github.com/jmoenig/Snap--Build-Your-Own-Blocks)
 - [JSDoc3](https://github.com/jsdoc3/jsdoc)
 - [JSDoc3 API Documentations](http://usejsdoc.org)
 
@@ -9,7 +11,7 @@
 Install the template using NPM:
 
 ```bash
-npm install @pixi/jsdoc-template --save-dev
+npm install @superruzafa/morphic-jsdoc-template --save-dev
 ```
 
 ## Usage
@@ -22,7 +24,7 @@ jsdoc -c conf.json -R README.md
 
 ### conf.json
 
-You can set options for customizing your documentations. Notice the `"template"` field for setting the path to **pixi-jsdoc-template**.
+You can set options for customizing your documentations. Notice the `"template"` field for setting the path to **morphic-jsdoc-template**.
 
 ```json
 "templates": {
@@ -55,7 +57,7 @@ You can set options for customizing your documentations. Notice the `"template"`
         "private": false,
         "lenient": true,
         "destination": "./docs",
-        "template": "./node_modules/@pixi/jsdoc-template"
+        "template": "./node_modules/@superruzafa/morphic-jsdoc-template"
     }
 }
 ```
