@@ -11,7 +11,7 @@ Based on [PixiJS template](https://github.com/pixijs/pixi-jsdoc-template)
 Install the template using NPM:
 
 ```bash
-npm install @superruzafa/morphic-jsdoc-template --save-dev
+npm install morphic-jsdoc-template --save-dev
 ```
 
 ## Usage
@@ -57,7 +57,7 @@ You can set options for customizing your documentations. Notice the `"template"`
         "private": false,
         "lenient": true,
         "destination": "./docs",
-        "template": "./node_modules/@superruzafa/morphic-jsdoc-template"
+        "template": "./node_modules/morphic-jsdoc-template"
     }
 }
 ```

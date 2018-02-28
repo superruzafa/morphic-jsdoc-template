@@ -1,6 +1,6 @@
 {
-  "name": "@superruzafa/morphic-jsdoc-template",
-  "version": "0.1.0",
+  "name": "morphic-jsdoc-template",
+  "version": "0.1.1",
   "description": "JSDoc 3 template for Snap's Morphic API",
   "dependencies": {
     "taffydb": "^2.7.2",
@@ -45,6 +45,6 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/pixijs/pixi-jsdoc-template/issues"
+    "url": "https://github.com/superruzafa/morphic-jsdoc-template/issues"
   }
 }
