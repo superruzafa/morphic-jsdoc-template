@@ -1,6 +1,6 @@
 {
   "name": "morphic-jsdoc-template",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JSDoc 3 template for Snap's Morphic API",
   "dependencies": {
     "taffydb": "^2.7.2",
