@@ -284,7 +284,6 @@ function buildNav(members) {
                     overrided: find({
                         kind: 'function',
                         memberof: v.longname,
-                        inherited: true,
                         overrides: { isUndefined: false }
                     }),
                     inherited: find({
